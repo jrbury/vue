@@ -14,7 +14,7 @@
             <label>Project</label>
             <input type="text" v-model="projectText" ref="project" defaultValue="">
           </div>
-          <div class="ui two button attached buttons">
+          <div class="ui">
             <button class="ui basic blue button" v-on:click="sendForm">
               Create
             </button>

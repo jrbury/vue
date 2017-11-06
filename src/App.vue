@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import swal from "sweetalert";
 import TodoList from "./components/TodoList";
 import CreateTodo from "./components/CreateTodo";
 
@@ -48,6 +49,7 @@ export default {
   methods: {
     addTodo(todo) {
       this.todos.push(todo);
+      swal("Success!", "To-Do Added!", "success");
     }
   }
 };

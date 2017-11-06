@@ -23,8 +23,19 @@ export default {
   },
   methods: {
     deleteTodo(todo) {
-      const todoIndex = this.todos.indexOf(todo);
-      this.todos.splice(todoIndex, 1);
+      swal({
+        title: "Are you sure?",
+        text: "Confirm to delete the To-Do",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(willDelete => {
+        if (willDelete) {
+          const todoIndex = this.todos.indexOf(todo);
+          this.todos.splice(todoIndex, 1);
+          swal({ text: "Successfully deleted todo!", icon: "success" });
+        }
+      });
     },
     completeTodo(todo) {
       const todoIndex = this.todos.indexOf(todo);
